@@ -103,4 +103,17 @@ public class Employeedao {
 		System.out.println(list);
 
 	}
+
+	public void hqlInsert(EmployeeEntity he) {
+
+		Configuration cfg = new Configuration();
+		cfg.configure("hibernate.cfg.xml");
+		cfg.addAnnotatedClass(EmployeeEntity.class);
+
+		SessionFactory sf = cfg.buildSessionFactory();
+		Session ss = sf.openSession();
+		Transaction t = ss.beginTransaction();
+
+		EmployeeEntity ehe = new EmployeeEntity();
+	}
 }
